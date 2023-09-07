@@ -13,6 +13,12 @@ body {
     min-height: 100vh;
     background: linear-gradient(to left top, #031a9a, #8853ff);
 }
+.carousel .card {
+    height: 342px;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+}
 .card .img img {
     width: 140px;
     height: 140px;
