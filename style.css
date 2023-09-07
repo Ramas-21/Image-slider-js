@@ -6,3 +6,9 @@
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
 }
+.card .img img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    
+}
