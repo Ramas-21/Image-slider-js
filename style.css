@@ -30,9 +30,21 @@ body {
     list-style: none;
     background: #fff;
     border-radius: 8px;
+    display: flex;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card .img{
+    background: #8853FF;
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
 }
 .card .img img {
     width: 140px;
     height: 140px;
     object-fit: cover;
+    border-radius: 50%;
 }
