@@ -13,6 +13,13 @@ body {
     min-height: 100vh;
     background: linear-gradient(to left top, #031a9a, #8853ff);
 }
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 16px;
+    overflow: hidden;
+}
 .carousel .card {
     height: 342px;
     list-style: none;
@@ -23,5 +30,4 @@ body {
     width: 140px;
     height: 140px;
     object-fit: cover;
-
 }
