@@ -25,16 +25,18 @@ body {
     gap: 16px;
    /* overflow: hidden; */
 }
+.carousel :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .carousel .card {
     height: 342px;
     list-style: none;
     background: #fff;
     border-radius: 8px;
-    display: flex;
     padding-bottom: 15px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 }
 .card .img{
     background: #8853FF;
