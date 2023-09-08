@@ -43,6 +43,19 @@ const dragStop = () => {
     isDragging = false;
     carousel.classList.remove("dragging");
 }
+
+const infiniteScroll = () => {
+    // if the carousel is at the beginning, scroll to the end
+    if(carousel.scrollLeft === 0){
+        carousel.scrollLeft = carousel.scrollWidth - ( 2 * carousel.offsetWidth);
+    }
+    // if the carousel is at the end, scroll to the beginning
+    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
+        carousel.scrollLeft = carousel.offsetWidth;
+    }
+}
+
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
