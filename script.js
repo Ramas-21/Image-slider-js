@@ -1,3 +1,4 @@
+const wrapper = document.querySelector(".wrapper");
 const carousel = document.querySelector(".carousel");
 const arrowBtn = document.querySelectorAll(".wrapper i");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;
@@ -49,6 +50,7 @@ const autoPlay = () => {
     // Autoplay the carousel after every 2500ms
     timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
 }
+autoPlay();
 
 const infiniteScroll = () => {
     // if the carousel is at the beginning, scroll to the end
@@ -63,6 +65,9 @@ const infiniteScroll = () => {
         carousel.scrollLeft = carousel.offsetWidth;
         carousel.classList.remove("no-transition");
     }
+    // clear existing timeout and start autoplay if mouse is not hovering over carousel
+    clearTimeout(timeoutId);
+    if(!wrapper.matched(":hover")) autoPlay();
 }
 
 carousel.addEventListener("mousedown", dragStart);
