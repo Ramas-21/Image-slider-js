@@ -13,6 +13,11 @@ carouselChildren.slice(-cardPerView).reverse().forEach(card => {
     carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
 });
 
+// insert copies of the first few cards to end of carousel for infinite scrolling
+carouselChildren.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+
 // Add event listeners for the arrow buttons to scroll the carousel left and right
 arrowBtn.forEach(btn => {
     btn.addEventListener("click", () => {
