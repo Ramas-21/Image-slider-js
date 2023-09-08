@@ -3,7 +3,7 @@ const arrowBtn = document.querySelectorAll(".wrapper i");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;
 const carouselChildren = [...carousel.children];
 
-let isDragging = false, startX, startScrollLeft;
+let isDragging = false, startX, startScrollLeft, timeoutId;
 
 // Get the number of cards that can fit in the carousel at once
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
@@ -46,6 +46,8 @@ const dragStop = () => {
 
 const autoPlay = () => {
     if(window.innerWidth < 800) return; // Return if window is smaller than 800
+    // Autoplay the carousel after every 2500ms
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
 }
 
 const infiniteScroll = () => {
