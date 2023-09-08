@@ -2,7 +2,7 @@ const carousel = document.querySelector(".carousel");
 
 let isDragging = false, startX, startScrollLeft;
 
-const dragStart = () => {
+const dragStart = (e) => {
     isDragging = true;
     carousel.classList.add("dragging");
     // Records the initial cursor and scroll position of the carousel
@@ -12,7 +12,8 @@ const dragStart = () => {
 
 const dragging = (e) => {
     if(!isDragging) return; // if isDragging is false return from here
-    carousel.scrollLeft = e.pageX;
+    // updates the scroll position of the carousel based on the cursor movement
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 }
 
 const dragStop = () => {
