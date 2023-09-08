@@ -44,14 +44,22 @@ const dragStop = () => {
     carousel.classList.remove("dragging");
 }
 
+const autoPlay = () => {
+    if(window.innerWidth < 800) return; // Return if window is smaller than 800
+}
+
 const infiniteScroll = () => {
     // if the carousel is at the beginning, scroll to the end
     if(carousel.scrollLeft === 0){
+        carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.scrollWidth - ( 2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
     }
     // if the carousel is at the end, scroll to the beginning
     else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
+        carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
     }
 }
 
