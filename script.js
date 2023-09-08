@@ -6,7 +6,7 @@ let isDragging = false, startX, startScrollLeft;
 
 arrowBtn.forEach(btn => {
     btn.addEventListener("click", () => {
-        carousel.scrollLeft = btn.id === "left" ?
+        carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
     })
 });
 
