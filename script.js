@@ -8,6 +8,11 @@ let isDragging = false, startX, startScrollLeft;
 // Get the number of cards that can fit in the carousel at once
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
+// insert copies of the last few cards to beginning of carousel for infinite scrolling
+carouselChildren.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
+
 // Add event listeners for the arrow buttons to scroll the carousel left and right
 arrowBtn.forEach(btn => {
     btn.addEventListener("click", () => {
