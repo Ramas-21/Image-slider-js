@@ -1,8 +1,12 @@
 const carousel = document.querySelector(".carousel");
 const arrowBtn = document.querySelectorAll(".wrapper i");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+const carouselChildren = [...carousel.children];
 
 let isDragging = false, startX, startScrollLeft;
+
+// Get the number of cards that can fit in the carousel at once
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
 // Add event listeners for the arrow buttons to scroll the carousel left and right
 arrowBtn.forEach(btn => {
