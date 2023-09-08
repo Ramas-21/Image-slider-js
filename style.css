@@ -46,6 +46,10 @@ body {
     gap: 16px;
     overflow: hidden; 
 }
+.carousel .dragging .card {
+    cursor: grab;
+    user-select: none;
+}
 .carousel :where(.card, .img) {
     display: flex;
     align-items: center;
